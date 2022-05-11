@@ -4,6 +4,6 @@ interface PlacemarkStore {
     fun findAll(): List<PlacemarkModel>
     fun create(placemark: PlacemarkModel)
     fun update(placemark: PlacemarkModel)
-    fun deleteItem(position: Int)
+    fun deleteItem(placemark: PlacemarkModel)
 
 }

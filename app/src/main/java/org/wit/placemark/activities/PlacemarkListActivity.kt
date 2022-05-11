@@ -1,5 +1,6 @@
 package org.wit.placemark.activities
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
@@ -7,9 +8,7 @@ import android.view.MenuItem
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import org.wit.placemark.R
 import org.wit.placemark.adapters.PlacemarkAdapter
 import org.wit.placemark.adapters.PlacemarkListener
@@ -86,16 +85,17 @@ class PlacemarkListActivity : AppCompatActivity(), PlacemarkListener {
         showPlacemarks(app.placemarks.findAll())
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     fun showPlacemarks (placemarks: List<PlacemarkModel>) {
         binding.recyclerView.adapter = PlacemarkAdapter(placemarks, this)
         binding.recyclerView.adapter?.notifyDataSetChanged()
     }
 
 
-    private fun deleteItem(position: Int){
+    override fun deleteItem(placemark: PlacemarkModel){
         val launcherIntent = Intent(this, PlacemarkActivity::class.java)
         launcherIntent.removeExtra("placemark")
-        app.placemarks.deleteItem(position)
+        app.placemarks.deleteItem(placemark)
         update()
     }
 

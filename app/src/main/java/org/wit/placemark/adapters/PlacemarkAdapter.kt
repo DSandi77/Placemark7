@@ -11,14 +11,10 @@ import org.wit.placemark.models.PlacemarkModel
 
 interface PlacemarkListener {
     fun onPlacemarkClick(placemark: PlacemarkModel)
-
-}
-interface DeleteListener {
-    fun deleteItem(position: Int)
+    fun deleteItem(placemark: PlacemarkModel)
 }
 
 class PlacemarkAdapter constructor(private var placemarks: List<PlacemarkModel>,
-                                   private val deleteListener: DeleteListener,
                                    private val listener: PlacemarkListener) :
         RecyclerView.Adapter<PlacemarkAdapter.MainHolder>() {
 
@@ -32,11 +28,6 @@ class PlacemarkAdapter constructor(private var placemarks: List<PlacemarkModel>,
     override fun onBindViewHolder(holder: MainHolder, position: Int) {
         val placemark = placemarks[holder.adapterPosition]
         holder.bind(placemark, listener)
-
-
-
-
-
     }
 
     override fun getItemCount(): Int = placemarks.size
@@ -49,15 +40,9 @@ class PlacemarkAdapter constructor(private var placemarks: List<PlacemarkModel>,
             binding.description.text = placemark.description
             Picasso.get().load(placemark.image).resize(200,200).into(binding.imageIcon)
             binding.root.setOnClickListener { listener.onPlacemarkClick(placemark) }
-            //binding.btnDelete.setOnClickListener { listener.deleteItem(position = placemark.id.toInt())
-
-            }
-        fun bind(placemark: PlacemarkModel, listener: DeleteListener) {
-            binding.btnDelete.setOnClickListener { listener.deleteItem(position = placemark.id.toInt()) }
+            binding.btnDelete.setOnClickListener { listener.deleteItem(placemark) }
 
         }
-
-
     }
 
     private var onClickListener : OnClickListener? = null

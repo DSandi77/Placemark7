@@ -40,8 +40,10 @@ class PlacemarkJSONStore(private val context: Context) : PlacemarkStore {
         serialize()
     }
 
-    override fun deleteItem(position: Int){
-        placemarks.removeAt(position)
+    override fun deleteItem(placemark: PlacemarkModel){
+        placemark.id = getId()
+        placemarks.remove(placemark)
+        logAll()
     }
 
 
