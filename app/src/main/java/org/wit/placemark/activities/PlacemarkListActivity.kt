@@ -96,14 +96,9 @@ class PlacemarkListActivity : AppCompatActivity(), PlacemarkListener {
         val launcherIntent = Intent(this, PlacemarkActivity::class.java)
         launcherIntent.removeExtra("placemark")
         app.placemarks.deleteItem(placemark)
-
-        update()
+        loadPlacemarks()
     }
 
-    private fun update(){
-        binding.recyclerView.invalidate()
-        binding.recyclerView.refreshDrawableState()
-    }
 
 
 
