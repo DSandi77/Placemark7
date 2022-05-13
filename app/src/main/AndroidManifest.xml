@@ -31,8 +31,12 @@
             android:name=".activities.MapActivity"
             android:exported="true"
             android:label="@string/title_activity_map" />
+
+        /** make sure that the login looks like this.
+         exported might be false */
         <activity
             android:name=".activities.PlacemarkListActivity"
+
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
