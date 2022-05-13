@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "735190632227",
+    "project_id": "pakup-for-your-adventure",
+    "storage_bucket": "pakup-for-your-adventure.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:735190632227:android:84daaf3492c5fe58962e96",
+        "android_client_info": {
+          "package_name": "com.example.android.firebaseui_login_sample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "735190632227-l0k5jh1uemscrohltpp699hcblsjculg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-7xXqQHO8Tsmvk4vyKoYrXLuX4Zy-wWY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "735190632227-l0k5jh1uemscrohltpp699hcblsjculg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:735190632227:android:eadab80bfef843fc962e96",
+        "android_client_info": {
+          "package_name": "org.wit.placemark"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "735190632227-l0k5jh1uemscrohltpp699hcblsjculg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-7xXqQHO8Tsmvk4vyKoYrXLuX4Zy-wWY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "735190632227-l0k5jh1uemscrohltpp699hcblsjculg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
