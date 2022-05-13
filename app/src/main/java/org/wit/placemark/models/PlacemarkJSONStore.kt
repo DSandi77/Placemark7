@@ -44,11 +44,12 @@ class PlacemarkJSONStore(private val context: Context) : PlacemarkStore {
         placemark.id = getId()
         placemarks.remove(placemark)
         logAll()
+        serialize()
     }
 
 
     override fun update(placemark: PlacemarkModel) {
-        // todo
+
     }
 
     private fun serialize() {
