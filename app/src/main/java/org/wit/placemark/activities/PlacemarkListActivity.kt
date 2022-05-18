@@ -9,6 +9,8 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import org.wit.placemark.R
 import org.wit.placemark.adapters.PlacemarkAdapter
 import org.wit.placemark.adapters.PlacemarkListener
@@ -59,6 +61,10 @@ class PlacemarkListActivity : AppCompatActivity(), PlacemarkListener {
                 val launcherIntent = Intent(this, PlacemarkMapsActivity::class.java)
                 refreshIntentLauncher.launch(launcherIntent)
             }
+            R.id.logout -> {
+                endPlaceMarkActivityList()
+
+            }
         }
         return super.onOptionsItemSelected(item)
     }
@@ -101,6 +107,11 @@ class PlacemarkListActivity : AppCompatActivity(), PlacemarkListener {
     }
 
 
+    private fun endPlaceMarkActivityList(){
+        Firebase.auth.signOut()
+        val i = Intent(this, AuthActivity::class.java)
+        startActivity(i)
+    }
 
 
 

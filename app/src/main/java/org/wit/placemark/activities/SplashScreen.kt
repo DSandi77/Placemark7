@@ -20,7 +20,7 @@ class SplashScreen : AppCompatActivity() {
 
         binding.sun.alpha = 0f
         binding.sun.animate().setDuration(1500).alpha(1f).withEndAction {
-            val i = Intent(this, PlacemarkListActivity::class.java)
+            val i = Intent(this, AuthActivity::class.java)
             startActivity(i)
             overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out)
             finish()

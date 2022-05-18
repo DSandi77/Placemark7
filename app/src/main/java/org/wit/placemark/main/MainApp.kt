@@ -9,6 +9,10 @@ import org.wit.placemark.models.PlacemarkStore
 import timber.log.Timber
 import timber.log.Timber.i
 
+enum class ProviderType{
+    BASIC
+}
+
 class MainApp : Application() {
 
     lateinit var placemarks: PlacemarkStore
